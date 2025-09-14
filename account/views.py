@@ -10,7 +10,7 @@ from .forms import (
 from .models import Profile
 
 # Create your views here.
-
+@login_required
 def dashboard(request):
     return render(
         request,

@@ -2,3 +2,5 @@ env/
 db.sqlite3
 .env
 media/
+cert.crt
+cert.key
