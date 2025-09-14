@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.utils.text import slugify
+from django.urls import reverse
 from django.db import models
 
 # Create your models here.
@@ -38,3 +39,5 @@ class Image(models.Model):
             self.slug = slugify(self.title)
         super().save(*args,**kwargs)
 
+
+    
