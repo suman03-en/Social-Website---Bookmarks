@@ -46,16 +46,13 @@
     <div id="content">
         {% block content %}{% endblock content %}
     </div>
-
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.messages .close').forEach(function(closeBtn) {
-        closeBtn.addEventListener('click', function(e) {
-            e.preventDefault(); // stop the page from jumping
-            this.parentElement.remove(); // remove the <li>
-        });
-    });
-});
+  <script src="//cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+<script>
+    const csrftoken = Cookies.get('csrftoken');
+    document.addEventListener('DOMContentLoaded',(event)=>{
+        {% block domready %}
+        {% endblock%}
+    })
 </script>
 </body>
 </html>
