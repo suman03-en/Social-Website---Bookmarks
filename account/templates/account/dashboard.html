@@ -12,8 +12,10 @@
 
     <p>you can also <a href="{% url "edit" %}">edit your profile</a></p>
 
-    <h2>Recent Activities</h2>
+  <h2>What's happening</h2>
+  <div id="action-list">
     {% for action in actions %}
-    <p>{{action.user.get_full_name}} {{action.verb}} {{action.target}} </p>
+      {% include "actions/action/detail.html" %}
     {% endfor %}
+  </div>
 {% endblock content %}
